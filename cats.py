@@ -5,7 +5,7 @@ import sys
 def find_all_n_letter_words(letter_sequence, dict, n):
     # Get every combination of n letters in letter sequence
     letter_combos = itertools.combinations(letter_sequence, n)
-    result = set()
+    solutions = set()
 
     for letter_combo in letter_combos:
         # Create list of all permuations of the letter combination
@@ -13,9 +13,9 @@ def find_all_n_letter_words(letter_sequence, dict, n):
         # Get all permutations that are valid words
         valid_words = set(dict).intersection(perms)
 
-        result = result.union(valid_words)
+        solutions = solutions.union(valid_words)
 
-    return result
+    return solutions
 
 
 def find_all_words(letter_sequence, dict):
